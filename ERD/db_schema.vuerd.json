@@ -1,0 +1,185 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "brazzilian_ecommerce",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "customer",
+        "comment": "",
+        "columns": [
+          {
+            "name": "customer_id",
+            "comment": "",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.80810546875,
+              "widthComment": 60,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "49797513-aaad-4d6c-b558-cf533145a88c"
+          },
+          {
+            "name": "customer_unique_id",
+            "comment": "",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 119.076171875,
+              "widthComment": 60,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "3412c456-89a2-4cae-ac53-2f99645c3460"
+          },
+          {
+            "name": "customer_zip_code_prefix",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 153.7470703125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "07cc91f1-190d-44b7-931e-97d76639683e"
+          },
+          {
+            "name": "customer_city",
+            "comment": "",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 82.18994140625,
+              "widthComment": 60,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "b2628d5e-3fa3-4d1f-865f-eaf751fd00d1"
+          },
+          {
+            "name": "customer_state",
+            "comment": "",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.87353515625,
+              "widthComment": 60,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "5825366d-85c2-4962-926e-2968792755d3"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 127.2,
+          "top": 67.2,
+          "zIndex": 1,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "visible": true,
+        "id": "0bf4501a-fe97-4396-aa6d-a3db67b5e845"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}
