@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 5000,
     "height": 5000,
-    "scrollTop": -850.8666666666704,
-    "scrollLeft": -1300.7171875000001,
-    "zoomLevel": 1,
+    "scrollTop": -1266.066666666673,
+    "scrollLeft": -1691.1171874999968,
+    "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -168,7 +168,7 @@
           "active": false,
           "left": 1205.7754,
           "top": 1835.7,
-          "zIndex": 40,
+          "zIndex": 3,
           "widthName": 61.9599609375,
           "widthComment": 120
         },
@@ -177,11 +177,11 @@
       },
       {
         "name": "orders",
-        "comment": "",
+        "comment": "This is the core dataset. From each order you might find all other information.",
         "columns": [
           {
             "name": "order_id",
-            "comment": "",
+            "comment": "unique identifier of the order.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -196,7 +196,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -204,7 +204,7 @@
           },
           {
             "name": "customer_id",
-            "comment": "",
+            "comment": "key to the customer dataset. Each order has a unique customer_id.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -219,7 +219,7 @@
               "fk": true,
               "pfk": false,
               "widthName": 72.80810546875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -227,7 +227,7 @@
           },
           {
             "name": "order_status",
-            "comment": "",
+            "comment": "reference to the order status (delivered, shipped, etc).",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -242,7 +242,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 74.26171875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -250,7 +250,7 @@
           },
           {
             "name": "order_purchase_timestamp",
-            "comment": "",
+            "comment": "shows the purchase timestamp.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -265,7 +265,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 160.2470703125,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -273,7 +273,7 @@
           },
           {
             "name": "order_approved_at",
-            "comment": "",
+            "comment": "shows the payment approval timestamp.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -288,7 +288,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 111.85888671875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -296,7 +296,7 @@
           },
           {
             "name": "order_delivered_carrier_date",
-            "comment": "",
+            "comment": "shows the order posting timestamp. When it was handled to the logistic partner.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -311,7 +311,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 168.9306640625,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -319,7 +319,7 @@
           },
           {
             "name": "order_delivered_customer_date",
-            "comment": "",
+            "comment": "shows the actual order delivery date to the customer.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -334,7 +334,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 185.55517578125,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -342,7 +342,7 @@
           },
           {
             "name": "order_estimated_delivery_date",
-            "comment": "",
+            "comment": "shows the estimated delivery date that was informed to customer at the purchase moment.",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -357,7 +357,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 180.49609375,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -366,11 +366,11 @@
         ],
         "ui": {
           "active": false,
-          "left": 1218.5397,
-          "top": 1412.9653,
-          "zIndex": 4,
+          "left": 1188.1397,
+          "top": 1416.1653,
+          "zIndex": 112,
           "widthName": 60,
-          "widthComment": 60
+          "widthComment": 120
         },
         "visible": true,
         "id": "bed281e3-1868-41a1-ac3a-52acb3bca479"
@@ -544,8 +544,8 @@
         "ui": {
           "active": false,
           "left": 1899.6938,
-          "top": 1422.4957,
-          "zIndex": 178,
+          "top": 1426.4957,
+          "zIndex": 115,
           "widthName": 70.63720703125,
           "widthComment": 120
         },
@@ -674,9 +674,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 596.5459,
-          "top": 1445.0033,
-          "zIndex": 136,
+          "left": 577.3459,
+          "top": 1446.6033,
+          "zIndex": 113,
           "widthName": 95.93896484375,
           "widthComment": 120
         },
@@ -851,9 +851,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1202.6,
-          "top": 1005.6,
-          "zIndex": 179,
+          "left": 1200.2,
+          "top": 1004.8,
+          "zIndex": 114,
           "widthName": 83.6435546875,
           "widthComment": 120
         },
@@ -862,11 +862,11 @@
       },
       {
         "name": "products",
-        "comment": "",
+        "comment": "This dataset includes data about the products sold by Olist.",
         "columns": [
           {
             "name": "product_id",
-            "comment": "",
+            "comment": "unique product identifier",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -881,7 +881,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 62.708984375,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -889,7 +889,7 @@
           },
           {
             "name": "product_category_name",
-            "comment": "",
+            "comment": "category name in Portuguese",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -901,18 +901,18 @@
             "ui": {
               "active": false,
               "pk": false,
-              "fk": false,
+              "fk": true,
               "pfk": false,
               "widthName": 142.20068359375,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
-            "id": "879d4777-807b-409d-b2d9-cf25989047ac"
+            "id": "e7522458-b35c-4e45-808e-81e9a3202629"
           },
           {
             "name": "product_name_length",
-            "comment": "",
+            "comment": "number of characters extracted from the product name.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -927,7 +927,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 127.759765625,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -935,7 +935,7 @@
           },
           {
             "name": "product_description_length",
-            "comment": "",
+            "comment": "number of characters extracted from the product description.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -950,7 +950,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 158.10791015625,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -958,7 +958,7 @@
           },
           {
             "name": "product_photos_qty",
-            "comment": "",
+            "comment": "number of product published photos",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -973,7 +973,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 116.1943359375,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -981,7 +981,7 @@
           },
           {
             "name": "product_weight_g",
-            "comment": "",
+            "comment": "product weight measured in grams.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -996,7 +996,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 104.62890625,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -1004,7 +1004,7 @@
           },
           {
             "name": "product_length_cm",
-            "comment": "",
+            "comment": "product length measured in centimeters.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -1019,7 +1019,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 112.56982421875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -1027,7 +1027,7 @@
           },
           {
             "name": "product_height_cm",
-            "comment": "",
+            "comment": "product height measured in centimeters.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -1042,7 +1042,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 112.56982421875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -1050,7 +1050,7 @@
           },
           {
             "name": "product_width_cm",
-            "comment": "",
+            "comment": "product width measured in centimeters.",
             "dataType": "FLOAT",
             "default": "",
             "option": {
@@ -1065,7 +1065,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 107.498046875,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -1074,22 +1074,22 @@
         ],
         "ui": {
           "active": false,
-          "left": 1909.4,
-          "top": 976,
-          "zIndex": 2,
+          "left": 1877.4,
+          "top": 977.6,
+          "zIndex": 170,
           "widthName": 60,
-          "widthComment": 60
+          "widthComment": 120
         },
         "visible": true,
         "id": "8b05018e-c730-45fd-b8d8-d3b2b2444013"
       },
       {
         "name": "sellers",
-        "comment": "",
+        "comment": "This dataset includes data about the sellers that fulfilled orders made at Olist. Use it to find the seller location and to identify which seller fulfilled each product.",
         "columns": [
           {
             "name": "seller_id",
-            "comment": "",
+            "comment": "seller unique identifier",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -1104,7 +1104,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -1112,7 +1112,7 @@
           },
           {
             "name": "seller_zip_code_prefix",
-            "comment": "",
+            "comment": "first 5 digits of seller zip code",
             "dataType": "INT",
             "default": "",
             "option": {
@@ -1127,7 +1127,7 @@
               "fk": true,
               "pfk": false,
               "widthName": 131.3525390625,
-              "widthComment": 60,
+              "widthComment": 120,
               "widthDataType": 60,
               "widthDefault": 60
             },
@@ -1135,7 +1135,7 @@
           },
           {
             "name": "seller_city",
-            "comment": "",
+            "comment": "seller city name",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -1150,7 +1150,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 60,
+              "widthComment": 92.30810546875,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -1158,7 +1158,7 @@
           },
           {
             "name": "seller_state",
-            "comment": "",
+            "comment": "seller state",
             "dataType": "LINESTRING",
             "default": "",
             "option": {
@@ -1173,7 +1173,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 68.47900390625,
-              "widthComment": 60,
+              "widthComment": 64.86083984375,
               "widthDataType": 80.0126953125,
               "widthDefault": 60
             },
@@ -1182,11 +1182,11 @@
         ],
         "ui": {
           "active": false,
-          "left": 2648.1778,
-          "top": 1451.0224,
-          "zIndex": 73,
+          "left": 2617.7778,
+          "top": 1458.2224,
+          "zIndex": 139,
           "widthName": 60,
-          "widthComment": 60
+          "widthComment": 120
         },
         "visible": true,
         "id": "ce6bc0fa-0809-4a34-8ec8-65f5596466a3"
@@ -1315,12 +1315,74 @@
           "active": false,
           "left": 2599.3711,
           "top": 1832.5717,
-          "zIndex": 63,
+          "zIndex": 4,
           "widthName": 68.498046875,
           "widthComment": 120
         },
         "visible": true,
         "id": "6d5460eb-49a8-4416-ae31-83878f8a5e3d"
+      },
+      {
+        "name": "product_category_name",
+        "comment": "Translates the product_category_name to english.",
+        "columns": [
+          {
+            "name": "product_category_name",
+            "comment": "category name in Portuguese",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 142.20068359375,
+              "widthComment": 120,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "e35c05e8-a649-4123-8d9c-cde28abe1180"
+          },
+          {
+            "name": "product_category_name_english",
+            "comment": "category name in English",
+            "dataType": "LINESTRING",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 190.626953125,
+              "widthComment": 120,
+              "widthDataType": 80.0126953125,
+              "widthDefault": 60
+            },
+            "id": "bc3bef8f-6f7b-443b-bd53-e731221d7343"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 2591.9172,
+          "top": 1049.2667,
+          "zIndex": 171,
+          "widthName": 142.20068359375,
+          "widthComment": 120
+        },
+        "visible": true,
+        "id": "bb6c2e04-962d-466c-b441-18b0f87f56e9"
       }
     ],
     "indexes": []
@@ -1348,8 +1410,8 @@
           "columnIds": [
             "495906bf-9184-4582-8713-e0185f8dadb8"
           ],
-          "x": 1464.823635546875,
-          "y": 1645.9653,
+          "x": 1464.423635546875,
+          "y": 1649.1653,
           "direction": "bottom"
         },
         "constraintName": "fk_customer_to_orders",
@@ -1365,8 +1427,8 @@
           "columnIds": [
             "9bdad8b6-895b-41df-af24-0406d45d476c"
           ],
-          "x": 1711.10757109375,
-          "y": 1529.4653,
+          "x": 1740.70757109375,
+          "y": 1532.6653,
           "direction": "right"
         },
         "end": {
@@ -1375,7 +1437,7 @@
             "a4724c32-e507-4184-b171-2678f2f7e3b2"
           ],
           "x": 1899.6938,
-          "y": 1528.7457,
+          "y": 1532.7457,
           "direction": "left"
         },
         "constraintName": "fk_orders_to_order_items",
@@ -1391,8 +1453,8 @@
           "columnIds": [
             "9bdad8b6-895b-41df-af24-0406d45d476c"
           ],
-          "x": 1464.823635546875,
-          "y": 1412.9653,
+          "x": 1464.423635546875,
+          "y": 1416.1653,
           "direction": "top"
         },
         "end": {
@@ -1400,8 +1462,8 @@
           "columnIds": [
             "c34d9245-b177-401f-9cc1-5edcc3c2bcc2"
           ],
-          "x": 1466.22353515625,
-          "y": 1218.1,
+          "x": 1463.82353515625,
+          "y": 1217.3,
           "direction": "bottom"
         },
         "constraintName": "fk_orders_to_order_reviews",
@@ -1417,8 +1479,8 @@
           "columnIds": [
             "87e59377-8f22-4e11-b814-ec3e6b75d270"
           ],
-          "x": 2141.960302734375,
-          "y": 1229.5,
+          "x": 2139.960302734375,
+          "y": 1231.1,
           "direction": "bottom"
         },
         "end": {
@@ -1427,7 +1489,7 @@
             "b537a0ad-be44-4176-bd8d-3b46ec30effc"
           ],
           "x": 2139.846876171875,
-          "y": 1422.4957,
+          "y": 1426.4957,
           "direction": "top"
         },
         "constraintName": "fk_products_to_order_items",
@@ -1443,8 +1505,8 @@
           "columnIds": [
             "03511e41-5ec7-4034-91c8-79733b738c9a"
           ],
-          "x": 2648.1778,
-          "y": 1526.5224,
+          "x": 2617.7778,
+          "y": 1533.7224,
           "direction": "left"
         },
         "end": {
@@ -1453,7 +1515,7 @@
             "e5c81ecf-188f-463c-90bb-e523c581f9db"
           ],
           "x": 2379.99995234375,
-          "y": 1528.7457,
+          "y": 1532.7457,
           "direction": "right"
         },
         "constraintName": "fk_sellers_to_order_items",
@@ -1469,8 +1531,8 @@
           "columnIds": [
             "9bdad8b6-895b-41df-af24-0406d45d476c"
           ],
-          "x": 1218.5397,
-          "y": 1529.4653,
+          "x": 1188.1397,
+          "y": 1532.6653,
           "direction": "left"
         },
         "end": {
@@ -1478,8 +1540,8 @@
           "columnIds": [
             "d1b5e5b5-4968-4fe0-84f4-bc37dc913b0e"
           ],
-          "x": 1091.28662265625,
-          "y": 1530.7533,
+          "x": 1072.08662265625,
+          "y": 1532.3533,
           "direction": "right"
         },
         "constraintName": "fk_orders_to_order_payments",
@@ -1504,8 +1566,8 @@
           "columnIds": [
             "a22c5daa-7b79-49f0-ac63-bcb422af44c7"
           ],
-          "x": 2867.3604171875,
-          "y": 1602.0224,
+          "x": 2866.9604171875,
+          "y": 1609.2224,
           "direction": "bottom"
         },
         "constraintName": "fk_geolocation_to_sellers",
@@ -1537,6 +1599,32 @@
         "constraintName": "fk_geolocation_to_customer",
         "visible": true,
         "id": "2e34fd53-8762-432e-aaab-9515dc224d71"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneOnly",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "bb6c2e04-962d-466c-b441-18b0f87f56e9",
+          "columnIds": [
+            "e35c05e8-a649-4123-8d9c-cde28abe1180"
+          ],
+          "x": 2591.9172,
+          "y": 1104.2667,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "8b05018e-c730-45fd-b8d8-d3b2b2444013",
+          "columnIds": [
+            "e7522458-b35c-4e45-808e-81e9a3202629"
+          ],
+          "x": 2402.52060546875,
+          "y": 1104.35,
+          "direction": "right"
+        },
+        "constraintName": "fk_product_category_name_to_products",
+        "visible": true,
+        "id": "a26a82d0-4dbc-4531-8e41-c56b19357c8a"
       }
     ]
   }
