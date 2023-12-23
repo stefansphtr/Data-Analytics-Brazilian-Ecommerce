@@ -149,6 +149,8 @@ Follow these steps to run the dashboard on your local machine:
 
    This will start the Streamlit server and open a new page in your default web browser with the URL of the Streamlit app.
 
+   Or you can run the dashboard directly from the web browser by clicking on the following link: [STREAMLIT APP LINK](https://stefan-submission.streamlit.app/)
+
 2. **Use the dashboard**
 
 The dashboard provides a visual representation of sales performance data. Here's how to use it:
