@@ -22,7 +22,7 @@ max_date = all_df["order_purchase_timestamp"].max()
 LOGO_URL = "https://i.pinimg.com/originals/65/dd/2f/65dd2f283db26ce78dd6ab61a489b90e.jpg"
 BAR_COLOR = "#E36414"
 
-def filter_data(df):
+def filter_data(all_df):
     with st.sidebar:
         # Add company's logo
         st.image(LOGO_URL, width=250)
@@ -30,15 +30,15 @@ def filter_data(df):
 
         city = st.sidebar.multiselect(
             "Select the City:",
-            options=df["customer_city"].unique(),
-            default=[],
+            options=all_df["customer_city"].unique(),
+            default=["sao paulo"],
             placeholder="Select a city",
         )
 
         customer_type = st.sidebar.multiselect(
             "Select the Customer Segmentation:",
-            options=df["customer_segment"].unique(),
-            default=[],
+            options=all_df["customer_segment"].unique(),
+            default=["Mid Value Customers"],
             placeholder="Select a customer segment",
         )
 
@@ -49,23 +49,30 @@ def filter_data(df):
             max_value=max_date,
         )
 
-    df_selection = df.query(
+    df_selection = all_df.query(
         "customer_city == @city & customer_segment == @customer_type & order_purchase_timestamp >= @date_range[0] & order_purchase_timestamp <= @date_range[1]"
     )
-
-    # Check if the df_selection is empty
-    if df_selection.empty:
-        st.warning("No data available for the selected filters.")
-        st.stop()  # Stop the app from running further
+    
+    if df_selection is not None and "order_purchase_timestamp" in df_selection:
+        df_selection["order_purchase_day"] = df_selection["order_purchase_timestamp"].dt.day
+    else:
+        df_selection = pd.DataFrame({"order_purchase_timestamp": pd.date_range(start='1/1/2017', periods=31)})
+        df_selection["order_purchase_day"] = df_selection["order_purchase_timestamp"].dt.day
 
     return df_selection
 
-def display_kpis(df):
+def display_kpis(all_df):
     # TOP KPI's
-    total_sales = int(df["total_price"].sum())
-    average_rating = round(df["review_score"].mean(), 1)
-    star_rating = ":star:" * int(round(average_rating, 0)) if not np.isnan(average_rating) else ":star:" * 0
-    average_sales_per_order = round(df["total_price"].mean(), 2)
+    if all_df is not None:
+        total_sales = int(all_df["total_price"].sum()) if "total_price" in all_df else 0
+        average_rating = round(all_df["review_score"].mean(), 1) if "review_score" in all_df else 0
+        star_rating = ":star:" * int(round(average_rating, 0)) if not np.isnan(average_rating) else ":star:" * 0
+        average_sales_per_order = round(all_df["total_price"].mean(), 2) if "total_price" in all_df else 0
+    else:
+        total_sales = 0
+        average_rating = 0
+        star_rating = ":star:" * 0
+        average_sales_per_order = 0
 
     left_column, middle_column, right_column = st.columns(3)
     with left_column:
@@ -84,26 +91,31 @@ def display_kpis(df):
 
 def plot_charts(df):
     # Sales by Product Line (Bar Chart)
-    sales_by_product_line = df.groupby(by=["product_category_name_english"])[["total_price"]].sum().sort_values(by="total_price")
-    fig_product_sales = px.bar(
-        sales_by_product_line,
-        x="total_price",
-        y=sales_by_product_line.index,
-        orientation="h",
-        title="<b>Sales by Product Line</b>",
-        color_discrete_sequence=[BAR_COLOR] * len(sales_by_product_line),
-        template="plotly_white",
-    )
-    fig_product_sales.update_layout(
-        xaxis=(dict(showgrid=False)),
-        xaxis_title="Total Sales",
-        plot_bgcolor="rgba(0,0,0,0)",
-        yaxis=dict(showgrid=False, showticklabels=True),
-        yaxis_title="Product Category",
-    )
+    if df is not None:
+        sales_by_product_line = df.groupby(by=["product_category_name_english"])[["total_price"]].sum().sort_values(by="total_price")
+    else:
+        sales_by_product_line = None
+
+    if sales_by_product_line is not None:
+        fig_product_sales = px.bar(
+            sales_by_product_line,
+            x="total_price",
+            y=sales_by_product_line.index,
+            orientation="h",
+            title="<b>Sales by Product Line</b>",
+            color_discrete_sequence=[BAR_COLOR] * len(sales_by_product_line),
+            template="plotly_white",
+        )
+    else:
+        fig_product_sales = go.Figure()
+
 
     # Daily Sales [bar chart]
-    df["order_purchase_day"] = df["order_purchase_timestamp"].dt.day
+    if df is not None and "order_purchase_timestamp" in df:
+        df["order_purchase_day"] = df["order_purchase_timestamp"].dt.day
+    else:
+        df = pd.DataFrame({"order_purchase_timestamp": pd.date_range(start='1/1/2017', periods=31)})
+        df["order_purchase_day"] = df["order_purchase_timestamp"].dt.day
     sales_by_day = df.groupby(by=["order_purchase_day"])[["total_price"]].sum().reset_index()
 
     color_discrete_sequence = [BAR_COLOR] * len(sales_by_day) if len(sales_by_day) > 0 else [BAR_COLOR]
