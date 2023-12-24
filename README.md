@@ -166,3 +166,11 @@ The dashboard provides a visual representation of sales performance data. Here's
 - **Explore the charts**
 
    The dashboard includes two charts: Sales by Product Line and Sales by Day. These charts provide a visual representation of the sales data based on your filter selections.
+
+```python
+print("Thank you for reading! 🙏")
+```
+
+**Thank you for reading! 🙏**
+
+<div align='center'><img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000"></div>
