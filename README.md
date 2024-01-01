@@ -11,11 +11,11 @@
   </a>
 </p>
 
-# 📊 Project Data Analytics: Brazilian E-Commerce Public Dataset by Olist
+# <img src="./src/Logo-Dicoding-Academy.gif" width="50"> Project Data Analytics: Brazilian E-Commerce Public Dataset by Olist <img src="./src/Logo-Dicoding-Academy.gif" width="50">
 
 ## 📚 Table of Contents
 
-- [📊 Project Data Analytics: Brazilian E-Commerce Public Dataset by Olist](#-project-data-analytics-brazilian-e-commerce-public-dataset-by-olist)
+- [ Project Data Analytics: Brazilian E-Commerce Public Dataset by Olist ](#-project-data-analytics-brazilian-e-commerce-public-dataset-by-olist-)
   - [📚 Table of Contents](#-table-of-contents)
   - [🎯 Introduction](#-introduction)
   - [💻 Installation](#-installation)
